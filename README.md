@@ -6,14 +6,23 @@ This project implements a multi-step onboarding flow for a SaaS dashboard using 
 
 ```
 vue-onboarding-flow
+├── public
+│   └── favicon.ico
 ├── src
+│   ├── api
+│   │   ├── index.js
+│   │   └── mockServices.js
 │   ├── assets
 │   │   └── logo.svg
 │   ├── components
 │   │   ├── common
+│   │   │   ├── FileUploader.css
 │   │   │   ├── FileUploader.vue
+│   │   │   ├── LoadingIndicator.css
 │   │   │   ├── LoadingIndicator.vue
+│   │   │   ├── StepNavigation.css
 │   │   │   ├── StepNavigation.vue
+│   │   │   ├── Toast.css
 │   │   │   └── Toast.vue
 │   │   ├── icons
 │   │   │   ├── IconAlertCircle.vue
@@ -30,33 +39,36 @@ vue-onboarding-flow
 │   │   │   ├── IconUser.vue
 │   │   │   └── IconUsers.vue
 │   │   └── steps
-│   │       ├── PersonalDetails.vue
+│   │       ├── BusinessDetails.css
 │   │       ├── BusinessDetails.vue
+│   │       ├── PersonalDetails.css
+│   │       ├── PersonalDetails.vue
+│   │       ├── VerificationSummary.css
 │   │       └── VerificationSummary.vue
 │   ├── composables
 │   │   ├── useFileValidation.js
 │   │   └── useFormValidation.js
-│   ├── api
-│   │   ├── index.js
-│   │   └── mockServices.js
+│   ├── schemas
+│   │   ├── businessSchema.js
+│   │   ├── businessSchema.spec.js
+│   │   ├── personalSchema.js
+│   │   ├── personalSchema.spec.js
+│   │   ├── verificationSchema.js
+│   │   └── verificationSchema.spec.js
 │   ├── stores
 │   │   └── onboarding.js
-│   ├── schemas
-│   │   ├── personalSchema.js
-│   │   ├── businessSchema.js
-│   │   └── verificationSchema.js
 │   ├── views
+│   │   ├── OnboardingFlow.css
 │   │   └── OnboardingFlow.vue
+│   ├── App.css
 │   ├── App.vue
 │   └── main.js
-├── public
-│   └── favicon.ico
 ├── .eslintrc.js
 ├── .gitignore
 ├── index.html
 ├── package.json
-├── vite.config.js
-└── README.md
+├── README.md
+└── vite.config.js
 ```
 
 ## Setup Instructions
@@ -69,12 +81,12 @@ vue-onboarding-flow
 
 2. Install dependencies:
    ```
-   yarn install
+   npm install
    ```
 
 3. Run the development server:
    ```
-   yarn run dev
+   npm run dev
    ```
 
 4. Open your browser and navigate to `http://localhost:3000` (or the port specified in the terminal).
@@ -133,7 +145,7 @@ Both successful and error responses are handled to ensure robust testing of the 
 
 To run the unit tests, use the following command:
 ```
-yarn test
+npm run test
 ```
 
 This will execute the test suite and provide feedback on the validation logic and component functionality.
